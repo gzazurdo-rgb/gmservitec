@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="es" manifest="cache.appcache">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GM SERVICIO TÉCNICO — GM GAME</title>
+<style>
+:root{--bg:#07090d;--panel:#0d1118;--line:#263142;--text:#eef3f8;--muted:#8f9aaa;--accent:#72e0a0;--accent2:#4dbdff;--danger:#e17e7e}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:radial-gradient(circle at 50% -10%,#162334 0,#0a0d13 42%,#05070a 100%);color:var(--text);font:15px/1.45 "Segoe UI",system-ui,sans-serif}
+#brand{text-align:center;padding:18px 12px 16px;background:rgba(8,11,16,.96);border-bottom:1px solid var(--line);box-shadow:0 8px 30px rgba(0,0,0,.25)}#brand img{width:48px;height:48px;object-fit:contain;margin-bottom:7px;border-radius:11px}#brand b{display:block;font-size:20px;font-weight:800;letter-spacing:.12em}#brand small{display:block;color:#9ba8b9;font-size:10px;letter-spacing:.2em;margin-top:2px}
+#spin{position:fixed;top:50%;left:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border:4px solid #202a38;border-top-color:var(--accent);border-right-color:var(--accent2);border-radius:50%;animation:spin .85s linear infinite;box-shadow:0 0 28px rgba(114,224,160,.12)}@keyframes spin{to{transform:rotate(360deg)}}
+#msg{position:fixed;top:calc(50% + 54px);left:15px;right:15px;text-align:center;font-size:15px;color:#dce5ee;letter-spacing:.4px}#wrap{display:none}.ok,.safe{color:var(--accent)}.bad,.danger{color:var(--danger)}.warn{color:#e2c978}code{color:#a8c5e5}
+body.done #spin,body.fail #spin{display:none}body.fail #msg{display:block;color:#e17e7e;font-weight:700}body.done #msg{display:block;color:var(--accent);font-weight:800;letter-spacing:1.5px}
+body.log #spin,body.log #msg{display:none}body.log #wrap{display:block;padding:18px 20px;max-width:980px;margin:auto}body.log #state{display:block;font-size:24px;font-weight:800;margin:0 0 10px}body.log #out{display:block;white-space:pre-wrap;font:12px/1.5 Consolas,monospace;background:rgba(13,17,24,.95);border:1px solid var(--line);border-radius:12px;padding:14px;height:calc(100vh - 125px);overflow-y:auto;box-shadow:0 12px 35px rgba(0,0,0,.3)}
+@media(max-width:600px){body.log #wrap{padding:14px}body.log #out{height:calc(100vh - 116px)}}
+</style></head>
+<body>
+<div id="brand"><img src="logo_raw.png" alt="GM"><b>GM SERVICIO TÉCNICO</b><small>GM GAME • PS4 SERVICE</small></div>
+<div id="spin"></div><div id="msg">Iniciando servicio…</div><div id="wrap"><div id="state"></div><div id="out"></div></div>
+<script type="module">import "./jb.js?v=19";</script>
+</body></html>
